@@ -24,10 +24,12 @@ public partial class LoanAccountStatus
         //Faking a call to the Orchestrator
         var fetchedDataFromOrchestrator = GetLoanAccountStatusConsumer.GetLoanAccountStatusDetails();
         Model = LoanAccountStatusViewModel.MapFromDto(fetchedDataFromOrchestrator);
+        DispatchChanges();
     }
 
     private void DispatchChanges()
     {
         Dispatcher.Dispatch(Model);
+        StateHasChanged();
     }
 }
