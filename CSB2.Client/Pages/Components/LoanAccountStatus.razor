@@ -1,0 +1,194 @@
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<div class="card shadow-sm my-4">
+    <div class="card-header bg-primary text-white">
+        Loan Account Status Details
+    </div>
+    <div class="card-body">
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Status Code</label>
+            <div class="col-sm-8">
+                <input class="form-control" 
+                       value="@Model.AccountStatusCode" 
+                       @onchange="OnStatusCodeChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Status Description</label>
+            <div class="col-sm-8">
+                <input class="form-control" 
+                       value="@Model.AccountStatusDescription" 
+                       @onchange="OnStatusDescriptionChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Delinquency Code</label>
+            <div class="col-sm-8">
+                <input class="form-control" 
+                       value="@Model.DelinquencyStateCode" 
+                       @onchange="OnDelinquencyCodeChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Delinquency Description</label>
+            <div class="col-sm-8">
+                <input class="form-control" 
+                       value="@Model.DelinquencyStateDescription" 
+                       @onchange="OnDelinquencyDescriptionChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Interest Delinquency Days</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" 
+                       value="@Model.InterestDelinquencyDays" 
+                       @onchange="OnInterestDelinquencyDaysChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Capital Delinquency Days</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" 
+                       value="@Model.CapitalDelinquencyDays" 
+                       @onchange="OnCapitalDelinquencyDaysChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Interest Free From</label>
+            <div class="col-sm-8">
+                <input type="date" class="form-control" 
+                       value="@Model.InterestFreeFrom" 
+                       @onchange="OnInterestFreeFromChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Statement Type</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" 
+                       value="@Model.StatementType" 
+                       @onchange="OnStatementTypeChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Joint Account Type</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" 
+                       value="@Model.JointAccountType" 
+                       @onchange="OnJointAccountTypeChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Period</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" 
+                       value="@Model.Period" 
+                       @onchange="OnPeriodChanged" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-4 col-form-label">Decrease Type Code</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" 
+                       value="@Model.DecreaseTypeCode" 
+                       @onchange="OnDecreaseTypeCodeChanged" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    private void OnStatusCodeChanged(ChangeEventArgs e)
+    {
+        Model.AccountStatusCode = e.Value?.ToString();
+        DispatchChanges();
+    }
+
+    private void OnStatusDescriptionChanged(ChangeEventArgs e)
+    {
+        Model.AccountStatusDescription = e.Value?.ToString();
+        DispatchChanges();
+    }
+
+    private void OnDelinquencyCodeChanged(ChangeEventArgs e)
+    {
+        Model.DelinquencyStateCode = e.Value?.ToString();
+        DispatchChanges();
+    }
+
+    private void OnDelinquencyDescriptionChanged(ChangeEventArgs e)
+    {
+        Model.DelinquencyStateDescription = e.Value?.ToString();
+        DispatchChanges();
+    }
+
+    private void OnInterestDelinquencyDaysChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var val))
+            Model.InterestDelinquencyDays = val;
+        else
+            Model.InterestDelinquencyDays = null;
+
+        DispatchChanges();
+    }
+
+    private void OnCapitalDelinquencyDaysChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var val))
+            Model.CapitalDelinquencyDays = val;
+        else
+            Model.CapitalDelinquencyDays = null;
+
+        DispatchChanges();
+    }
+
+    private void OnInterestFreeFromChanged(ChangeEventArgs e)
+    {
+        if (DateTime.TryParse(e.Value?.ToString(), out var dt))
+            Model.InterestFreeFrom = DateOnly.FromDateTime(dt);
+        else
+            Model.InterestFreeFrom = null;
+
+        DispatchChanges();
+    }
+
+    private void OnStatementTypeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var val))
+            Model.StatementType = val;
+        else
+            Model.StatementType = null;
+
+        DispatchChanges();
+    }
+
+    private void OnJointAccountTypeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var val))
+            Model.JointAccountType = val;
+        else
+            Model.JointAccountType = null;
+
+        DispatchChanges();
+    }
+
+    private void OnPeriodChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var val))
+            Model.Period = val;
+        else
+            Model.Period = null;
+
+        DispatchChanges();
+    }
+
+    private void OnDecreaseTypeCodeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var val))
+            Model.DecreaseTypeCode = val;
+        else
+            Model.DecreaseTypeCode = null;
+
+        DispatchChanges();
+    }
+}

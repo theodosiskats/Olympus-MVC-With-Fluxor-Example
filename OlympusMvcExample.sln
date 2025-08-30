@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSB2.Client", "CSB2.Client\CSB2.Client.csproj", "{4C1FD8C4-B03B-426E-A843-9BD8590128AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{2126922A-23E8-4625-A1D0-3BE01EFD9718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrator", "Orchestrator\Orchestrator.csproj", "{A43916AE-1D06-4743-9E67-C22DD1515901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C1FD8C4-B03B-426E-A843-9BD8590128AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1FD8C4-B03B-426E-A843-9BD8590128AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1FD8C4-B03B-426E-A843-9BD8590128AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1FD8C4-B03B-426E-A843-9BD8590128AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2126922A-23E8-4625-A1D0-3BE01EFD9718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2126922A-23E8-4625-A1D0-3BE01EFD9718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2126922A-23E8-4625-A1D0-3BE01EFD9718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2126922A-23E8-4625-A1D0-3BE01EFD9718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43916AE-1D06-4743-9E67-C22DD1515901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43916AE-1D06-4743-9E67-C22DD1515901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43916AE-1D06-4743-9E67-C22DD1515901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43916AE-1D06-4743-9E67-C22DD1515901}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+@page "/test-counter"
+@using CSB2.Client.State
+@using Fluxor
+@inject IDispatcher Dispatcher
+@inject IState<CounterState> CounterState
+
+<h3>Fluxor Test</h3>
+
+<p>Clicks: @CounterState.Value.ClickCount</p>
+
+<button class="btn btn-primary" @onclick="Increment">Increment</button>
+
+@code {
+    private void Increment() =>
+        Dispatcher.Dispatch(new IncrementCounterAction());
+}

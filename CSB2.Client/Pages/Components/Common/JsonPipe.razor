@@ -1,0 +1,13 @@
+@typeparam T
+@using System.Text.Encodings.Web
+@using System.Text.Json
+
+<pre>@JsonSerializer.Serialize(Model, new JsonSerializerOptions {
+         WriteIndented = true,
+         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+     })</pre>
+
+@code {
+    [Parameter, EditorRequired]
+    public T? Model { get; set; }
+}
