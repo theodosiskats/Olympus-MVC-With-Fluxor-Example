@@ -15,11 +15,11 @@ public partial class LoanAccountStatus
 
     protected override void OnInitialized()
     {
-        FetchLoanAccountStatus();
+        FetchLoanAccountStatusDetails();
         base.OnInitialized();
     }
 
-    private void FetchLoanAccountStatus()
+    private void FetchLoanAccountStatusDetails()
     {
         //Faking a call to the Orchestrator
         var fetchedDataFromOrchestrator = GetLoanAccountStatusConsumer.GetLoanAccountStatusDetails();
