@@ -1,10 +1,10 @@
 @page "/"
+@using CSB2.Client.Components
 @using CSB2.Client.Pages.Components
-@using CSB2.Client.Pages.Components.Common
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
 <LoanAccountStatus/>
-
 <hr/>
 
+<h4>Parent Class Model [CreateFullyAmortizedAccountRequestDto]</h4>
 <JsonPipe Model="@Model"/>
