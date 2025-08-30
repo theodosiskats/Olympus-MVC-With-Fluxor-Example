@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using CSB2.Client;
-using CSB2.Client.State;
 using Fluxor;
 using Fluxor.Blazor.Web.ReduxDevTools;
 
@@ -14,8 +13,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 // Add Fluxor
 builder.Services.AddFluxor(options =>
 {
-    options.ScanAssemblies(typeof(Program).Assembly,
-        typeof(AppState.LoanAccountStatusState).Assembly);
+    options.ScanAssemblies(typeof(Program).Assembly);
     options.UseReduxDevTools();
 });
 

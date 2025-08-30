@@ -1,5 +1,3 @@
-using CSB2.Client.Pages.Components;
-using CSB2.Client.State;
 using CSB2.Client.ViewModels;
 using Fluxor;
 using Microsoft.AspNetCore.Components;
@@ -9,9 +7,6 @@ namespace CSB2.Client.Pages;
 
 public partial class CreateFullyAmortizedAccount
 {
-    [Inject] 
-    private IState<AppState.LoanAccountStatusState> LoanAccountStatusState { get; set; } = null!;
-    
     [Inject]
     private IActionSubscriber ActionSubscriber { get; set; } = null!;
     
@@ -25,11 +20,11 @@ public partial class CreateFullyAmortizedAccount
 
     private void SubscribeToActions()
     {
-        SubscribeToAction<LoanAccountStatus.UpdateLoanAccountStatusAction>(HandleLoanAccountStatusChange);
+        SubscribeToAction<LoanAccountStatusViewModel>(HandleLoanAccountStatusChange);
     }
 
-    private void HandleLoanAccountStatusChange(LoanAccountStatus.UpdateLoanAccountStatusAction data)
+    private void HandleLoanAccountStatusChange(LoanAccountStatusViewModel viewModel)
     {
-        Model.LoanAccountStatus = LoanAccountStatusViewModel.MapToDto(data.Model);
+        Model.LoanAccountStatus = LoanAccountStatusViewModel.MapToDto(viewModel);
     }
 }
