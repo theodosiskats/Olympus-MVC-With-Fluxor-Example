@@ -61,7 +61,7 @@ The orchestrator module handles backend business logic and communication.
 ### Getting Started
 1. Clone the repository to your local machine:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/theodosiskats/Olympus-MVC-With-Fluxor-Example.git
    ```
 2. Open the solution file `OlympusMvcExample.sln` in Visual Studio.
 3. Set `CSB2.Client` as the startup project.
